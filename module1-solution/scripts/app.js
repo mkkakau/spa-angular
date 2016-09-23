@@ -9,14 +9,19 @@
 		$scope.userInput = '';
 		$scope.message = '';
 		$scope.checkIfTooMuch = function () {
-			$scope.items = getItemsFromString($scope.userInput);
-			if($scope.items.length >= 3) {
-				$scope.message = 'Too much!';
-			} else {
-				$scope.message = 'Enjoy!';
+			if($scope.userInput.trim() === '') {
+				$scope.message = 'Please enter data first';
 			}
-			console.log('Counted ' + $scope.items.length + ' item(s):');
-			console.log($scope.items);
+			else {
+				$scope.items = getItemsFromString($scope.userInput);
+				if($scope.items.length >= 3) {
+					$scope.message = 'Too much!';
+				} else {
+					$scope.message = 'Enjoy!';
+				}
+				console.log('Counted ' + $scope.items.length + ' item(s):');
+				console.log($scope.items);
+			}
 		};
 		function getItemsFromString(string) {
 			var array = [];
