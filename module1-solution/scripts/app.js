@@ -15,7 +15,7 @@
 			} else {
 				$scope.message = 'Enjoy!';
 			}
-			console.log($scope.items.length + ' items:')
+			console.log($scope.items.length + ' item(s):');
 			console.log($scope.items);
 		};
 		function getItemsFromString(string) {
